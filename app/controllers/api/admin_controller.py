@@ -12,7 +12,7 @@ router = APIRouter(
 
 
 @router.get("/users", response_model=list[dto.UserDTO])
-def get_all_users(limit: int = Query(1000, gt=0), offset: int = Query(0, ge=0)):
+def get_all_users(user: dependencies.admin_dependency, limit: int = Query(1000, gt=0), offset: int = Query(0, ge=0)):
     return user_service.get_all(limit, offset)
 
 @router.get("/logs", response_model=dto.UserDTO)
