@@ -10,5 +10,5 @@ router = APIRouter(
 
 
 @router.get("/me", response_model=dto.UserDTO)
-def get_me(user: dependencies.admin_dependency):
+def get_me(user: dependencies.user_dependency):
     return user
